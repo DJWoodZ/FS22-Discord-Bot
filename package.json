@@ -1,0 +1,43 @@
+{
+  "name": "@djwoodz/fs22-discord-bot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "main": "./bin/server.js",
+  "bin": {
+    "fs22-discord-bot": "./bin/server.js"
+  },
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "update": "node ./src/update.js",
+    "pm2:start": "pm2 start ./bin/server.js --name fs22-discord-bot --time",
+    "pm2:stop": "pm2 stop fs22-discord-bot",
+    "dev": "nodemon ./bin/server.js -e js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DJWoodZ/FS22-Discord-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DJWoodZ/FS22-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/DJWoodZ/FS22-Discord-Bot#readme",
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "discord.js": "^14.13.0",
+    "dotenv-flow": "^3.2.0",
+    "fetch-retry": "^5.0.6",
+    "lodash": "^4.17.21",
+    "signal-exit": "^4.1.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1"
+  }
+}
