@@ -20,7 +20,7 @@ This bot works with a single Farming Simulator 22 Dedicated Server and will post
 <br />
 :joystick: The server has **1** new mod:
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;:star2: **Anti-AFK 1.0.1.0** by DJ WoodZ (d6f656fdd79f073fd9557d8acf847946)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;:star2: **Anti-AFK 1.0.1.0** by DJ WoodZ (`d6f656fdd79f073fd9557d8acf847946`)<br />
 
 **FS22** [BOT] <sub>Today at 10:30</sub>
 <br />
