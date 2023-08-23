@@ -19,8 +19,13 @@
     "type": "git",
     "url": "git+https://github.com/DJWoodZ/FS22-Discord-Bot.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Farming Simulator 22",
+    "FS22",
+    "Discord",
+    "Bot"
+  ],
+  "author": "DJ WoodZ",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DJWoodZ/FS22-Discord-Bot/issues"
