@@ -73,17 +73,6 @@ Permissions
 
 The only permission this bot requires is the `Send Messages` permission, which can be found in the [Discord Developer Portal](https://discord.com/developers/) under: `bot` -> `Text Permission` -> `Send Messages`
 
-Installation
-------------
-
-You need [git](https://git-scm.com/) and [Node.js](https://nodejs.org/) to be installed, then you must clone this repository and install the dependencies:
-
-```
-git clone git@github.com:DJWoodZ/FS22-Discord-Bot.git
-cd FS22-Discord-Bot
-npm install
-```
-
 Environment Variables
 ---------------------
 
@@ -132,8 +121,22 @@ If you do not want the bot to purge its old messages, simply leave these values 
 * `FS22_BOT_URL_CAREER_SAVEGAME` (Default: `http://localhost:8080/feed/dedicated-server-savegame.html`) - The dedicated-server-savegame.html?file=careerSavegame URL including code, e.g. `http://localhost:8080/feed/dedicated-server-savegame.html?code=ABCD1234&file=careerSavegame`
 * `FS22_BOT_URL_SERVER_STATS` (Default: `http://localhost:8080/feed/dedicated-server-stats.xml`) - The dedicated-server-stats.xml URL including code, e.g. `http://localhost:8080/feed/dedicated-server-stats.xml?code=ABCD1234`
 
-CLI Commands
+Installation
 ------------
+
+You can either run this project directly on a host machine, or you can run it in a docker container. If you are going to be running it directly, the dependencies will need to be installed.
+
+### Running directly on host machine
+
+You need [git](https://git-scm.com/) and [Node.js](https://nodejs.org/) to be installed, then you must clone this repository and install the dependencies:
+
+```
+git clone https://github.com/DJWoodZ/FS22-Discord-Bot.git
+cd FS22-Discord-Bot
+npm install
+```
+
+#### CLI Commands
 
 * `npm start` - Run the Discord bot normally
 * `npm run update` - Update the local database (useful for getting current state of server without posting status information in Discord)
@@ -145,18 +148,17 @@ CLI Commands
 <br />
 \** Install PM2 globally first (see below)
 
-Installing as a service (with PM2)
-----------------------------------
+#### Installing as a service (with PM2)
 
 The `npm run pm2:start` and `npm run pm2:stop` scripts use a global PM2 NPM dependency.
 
-### Installing PM2 globally
+##### Installing PM2 globally
 
 ```
 npm install pm2@latest -g
 ```
 
-### Run as a service (Linux, etc.)
+##### Run as a service (Linux, etc.)
 
 To ensure the Discord bot service starts automatically following a system reboot:
 
@@ -168,7 +170,7 @@ pm2 save
 
 See the [PM2 Process Management Quick Start](https://pm2.keymetrics.io/docs/usage/quick-start/) for details.
 
-### Run as a service (Windows)
+##### Run as a service (Windows)
 
 To run as a service on Windows, you will need to use [pm2-installer](https://github.com/jessety/pm2-installer).
 
@@ -180,3 +182,57 @@ pm2 save
 ```
 
 See the [PM2 Process Management Quick Start](https://pm2.keymetrics.io/docs/usage/quick-start/) for details.
+
+### Running with Docker Compose
+
+This project comes pre-configured ready for use with Docker Compose.
+
+The default Docker Compose configuration (`compose.yaml`) will use the `.env.local` file on the host machine.
+
+The `FS22_BOT_DB_PATH` value in `.env.local` will be ignored by the Docker Compose configuration. The default Docker Compose configuration will create and use a database JSON file located on the host machine at: `.\docker-volumes\db\db.json`.
+
+You need [git](https://git-scm.com/), [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) to be installed and then you must clone this repository:
+
+```
+git clone https://github.com/DJWoodZ/FS22-Discord-Bot.git
+```
+
+#### Running normally
+
+```
+docker compose up
+```
+
+#### Running in detached mode
+
+To run as a service, use detached mode:
+
+```
+docker compose up -d
+```
+
+#### Force build and recreation
+
+If you need to force Docker Compose to build the image and recreate the container, you can use the `--build` and `--force-recreate` options:
+
+```
+docker compose up --build --force-recreate
+```
+
+This can also be used with detached mode:
+
+```
+docker compose up -d --build --force-recreate
+```
+
+For a full list of options see the [`docker compose up`](https://docs.docker.com/engine/reference/commandline/compose_up/) documentation.
+
+#### Interacting with the container
+
+For development only.
+
+If you need to interact with the container, you can use this command (assuming the container is named `fs22-discord-bot-server-1`):
+
+```
+docker exec -it fs22-discord-bot-server-1 /bin/sh
+```

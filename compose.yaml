@@ -1,0 +1,12 @@
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+      FS22_BOT_DB_PATH: /usr/src/app/db/db.json
+    env_file:
+      - ./.env
+      - ./.env.local
+    volumes:
+       - ./docker-volumes/db/:/usr/src/app/db/
