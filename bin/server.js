@@ -7,7 +7,9 @@ const {
   Client, GatewayIntentBits, PermissionsBitField, ChannelType,
 } = require('discord.js');
 const { onExit } = require('signal-exit');
-require('dotenv-flow').config();
+require('dotenv-flow').config({
+  silent: true,
+});
 
 const {
   getDefaultDatabase,

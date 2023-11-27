@@ -33,16 +33,16 @@
   "homepage": "https://github.com/DJWoodZ/FS22-Discord-Bot#readme",
   "dependencies": {
     "deepmerge": "^4.3.1",
-    "discord.js": "^14.13.0",
-    "dotenv-flow": "^3.2.0",
+    "discord.js": "^14.14.1",
+    "dotenv-flow": "^4.0.1",
     "fetch-retry": "^5.0.6",
     "lodash": "^4.17.21",
     "signal-exit": "^4.1.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "eslint": "^8.47.0",
+    "eslint": "^8.54.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.28.1"
+    "eslint-plugin-import": "^2.29.0"
   }
 }
