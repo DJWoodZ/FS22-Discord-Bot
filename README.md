@@ -195,6 +195,7 @@ You need [git](https://git-scm.com/), [Docker](https://docs.docker.com/engine/in
 
 ```
 git clone https://github.com/DJWoodZ/FS22-Discord-Bot.git
+cd FS22-Discord-Bot
 ```
 
 #### Running normally
