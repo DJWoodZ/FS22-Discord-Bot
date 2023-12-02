@@ -52,7 +52,6 @@ This bot works with a single Farming Simulator 22 Dedicated Server and will post
 <br />
 :watch: Savegame Play Time: **11 days, 22 hours and 33 minutes**.
 
-
 ### Activity updates
 
 It will also update its current activity (status) to show the Dedicated Server's current status and number of online players:
@@ -73,8 +72,7 @@ Permissions
 
 The only permission this bot requires is the `Send Messages` permission, which can be found in the [Discord Developer Portal](https://discord.com/developers/) under: `bot` -> `Text Permission` -> `Send Messages`
 
-Environment Variables
----------------------
+<h2 id="env-vars">Environment Variables</h2>
 
 Copy the `.env` file and create an `.env.local` file for your environment variables. You will then need to edit the `.env.local` file.
 
@@ -134,7 +132,10 @@ You need [git](https://git-scm.com/) and [Node.js](https://nodejs.org/) to be in
 git clone https://github.com/DJWoodZ/FS22-Discord-Bot.git
 cd FS22-Discord-Bot
 npm install
+cp .env .env.local
 ```
+
+You will need edit the `.env.local` file. See the [Environment Variables](#env-vars) section for details.
 
 #### CLI Commands
 
@@ -196,7 +197,10 @@ You need [git](https://git-scm.com/), [Docker](https://docs.docker.com/engine/in
 ```
 git clone https://github.com/DJWoodZ/FS22-Discord-Bot.git
 cd FS22-Discord-Bot
+cp .env .env.local
 ```
+
+You will need edit the `.env.local` file. See the [Environment Variables](#env-vars) section for details.
 
 #### Running normally
 
