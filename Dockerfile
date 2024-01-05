@@ -34,4 +34,4 @@ USER node
 
 COPY . .
 
-CMD npm start
+CMD [ "node", "./bin/server.js" ]

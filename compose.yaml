@@ -10,3 +10,4 @@ services:
       - ./.env.local
     volumes:
        - ./docker-volumes/db/:/usr/src/app/db/
+    restart: unless-stopped
