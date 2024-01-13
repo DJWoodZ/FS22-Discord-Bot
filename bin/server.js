@@ -180,6 +180,21 @@ const sendMessage = (message) => {
   }
 };
 
+const attemptPurge = () => {
+  const now = new Date().getTime();
+  if (willPurge() && now >= nextPurge) {
+    // set next purge time
+    nextPurge = getNextPurge();
+    console.log('Looking for messages to purge...');
+    try {
+      purgeOldMessages(client);
+    } catch (e) {
+      console.error(e);
+    }
+    console.log(`Next purge will be ${new Date(nextPurge)}`);
+  }
+};
+
 const update = () => {
   console.log('Updating...');
   getDataFromAPI()
@@ -247,24 +262,17 @@ const update = () => {
       }
     });
 
-  const now = new Date().getTime();
-  if (willPurge() && now >= nextPurge) {
-    // set next purge time
-    nextPurge = getNextPurge();
-    console.log('Looking for messages to purge...');
-    try {
-      purgeOldMessages(client);
-    } catch (e) {
-      console.error(e);
-    }
-    console.log(`Next purge will be ${new Date(nextPurge)}`);
-  }
+  attemptPurge();
 };
 
 client.on('ready', () => {
   if (willPurge()) {
-    nextPurge = getNextPurge();
-    console.log(`First purge will be ${new Date(nextPurge)}`);
+    if (process.env.FS22_BOT_PURGE_DISCORD_CHANNEL_ON_STARTUP) {
+      attemptPurge();
+    } else {
+      nextPurge = getNextPurge();
+      console.log(`First purge will be ${new Date(nextPurge)}`);
+    }
   }
 
   if (intervalTimer) {

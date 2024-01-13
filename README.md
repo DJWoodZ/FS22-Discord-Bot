@@ -115,6 +115,7 @@ If you do not want the bot to purge its old messages, simply leave these values 
 * `FS22_BOT_PURGE_DISCORD_CHANNEL_AFTER_LINES` (Default: *blank*) - The maximum number of messages to keep
 * `FS22_BOT_PURGE_DISCORD_CHANNEL_HOUR` (Default: `2`) - The hour of the day to perform the purge in UTC (e.g. `2` for 2am (UTC))
 * `FS22_BOT_PURGE_DISCORD_CHANNEL_NAME` (Default: *blank*) - The Discord channel name to purge (leave blank to disable purging)
+* `FS22_BOT_PURGE_DISCORD_CHANNEL_ON_STARTUP` (Default: `false`) - Attempt a purge when the bot first connects
 * `FS22_BOT_PURGE_DISCORD_CHANNEL_SERVER_NAME` (Default: *blank*) - The Discord server name with the channel to purge (leave blank to disable purging)
 * `FS22_BOT_URL_CAREER_SAVEGAME` (Default: `http://localhost:8080/feed/dedicated-server-savegame.html`) - The dedicated-server-savegame.html?file=careerSavegame URL including code, e.g. `http://localhost:8080/feed/dedicated-server-savegame.html?code=ABCD1234&file=careerSavegame`
 * `FS22_BOT_URL_SERVER_STATS` (Default: `http://localhost:8080/feed/dedicated-server-stats.xml`) - The dedicated-server-stats.xml URL including code, e.g. `http://localhost:8080/feed/dedicated-server-stats.xml?code=ABCD1234`
